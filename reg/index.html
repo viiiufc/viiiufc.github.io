@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VIIIUFC | Online Registration</title>
+    <link rel="stylesheet" href="style.css">
+	<link rel="icon" href="logo.svg" type="image/svg+xml">
+</head>
+<body>
+
+<header class="topbar">
+    <div class="brand">
+        <img src="logo.png" id="siteLogo" alt="VIIIUFC Logo">
+        <div>
+            <h1>VIIIUFC</h1>
+            <p>Online Registration Portal</p>
+        </div>
+    </div>
+    <span class="status">REGISTRATION OPEN</span>
+</header>
+
+<main class="container">
+
+    <section id="formSection" class="panel">
+        <div class="heading">
+            <span class="eyebrow">VIIIUFC REGISTRATION</span>
+            <h2>Student Registration</h2>
+            <p>Fill in all the information carefully.</p>
+        </div>
+
+        <form id="registrationForm">
+
+            <div class="field">
+                <label for="name">Full Name *</label>
+                <input type="text" id="name"
+                       placeholder="Enter your full name"
+                       maxlength="100" required>
+            </div>
+
+            <div class="field">
+                <label for="mobile">Mobile Number *</label>
+                <input type="tel" id="mobile"
+                       placeholder="01XXXXXXXXX"
+                       pattern="[0-9+ -]{8,20}" required>
+            </div>
+
+            <div class="field">
+                <label for="section">Section *</label>
+                <select id="section" required>
+                    <option value="">Select your section</option>
+                    <option>A</option>
+                    <option>B</option>
+                    <option>C</option>
+                    <option>D</option>
+                    <option>E</option>
+                    <option>F</option>
+                    <option>G</option>
+                    <option>H</option>
+                    <option>I</option>
+                    <option>J</option>
+                </select>
+            </div>
+
+            <div class="field">
+                <label for="roll">Roll Number *</label>
+                <input type="number" id="roll"
+                       placeholder="Enter your roll number"
+                       min="1" max="999999" required>
+            </div>
+
+            <div class="field">
+                <label for="photo">Upload Your Photograph *</label>
+                <div class="upload-box">
+                    <input type="file" id="photo"
+                           accept=".jpg,.jpeg,.png,image/jpeg,image/png"
+                           required>
+                    <p>PNG / JPG / JPEG</p>
+                    <small>Maximum file size: 50 MB</small>
+                    <img id="photoPreview" alt="Photo preview">
+                </div>
+            </div>
+
+            <button type="submit" class="primary-btn">
+                Submit Registration →
+            </button>
+
+            <p class="note">
+                Please check your information before submitting.
+            </p>
+        </form>
+    </section>
+
+    <!-- REGISTRATION DOCUMENT -->
+    <section id="resultSection" hidden>
+
+        <div class="result-actions">
+            <button onclick="downloadPDF()" class="primary-btn">
+                Save as PDF
+            </button>
+			<button onclick="sendToCEO()" class="secondary-btn">
+				<i class="fab fa-whatsapp"></i> Send to CEO
+			</button>
+            <button onclick="location.reload()" class="light-btn">
+                New Registration
+            </button>
+        </div>
+
+        <article id="registrationPage" class="a4">
+
+            <div class="document-header">
+                <img src="assets/logo.png" id="documentLogo"
+                     alt="VIIIUFC Logo">
+                <div>
+                    <h1>VIIIUFC</h1>
+                    <h2>STUDENT REGISTRATION FORM</h2>
+                    <p>OFFICIAL REGISTRATION DOCUMENT</p>
+                </div>
+            </div>
+
+            <div class="document-line"></div>
+
+            <div class="registration-number">
+                <div>
+                    <span>REGISTRATION NUMBER</span>
+                    <h2 id="regNumber"></h2>
+                </div>
+                <span class="verified">REGISTERED</span>
+            </div>
+
+            <h3 class="section-title">STUDENT INFORMATION</h3>
+
+            <div class="student-layout">
+                <div class="details">
+                    <div class="detail">
+                        <span>Full Name</span>
+                        <strong id="outName"></strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Mobile Number</span>
+                        <strong id="outMobile"></strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Section</span>
+                        <strong id="outSection"></strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Roll Number</span>
+                        <strong id="outRoll"></strong>
+                    </div>
+
+                    <div class="detail">
+                        <span>Registration Date</span>
+                        <strong id="outDate"></strong>
+                    </div>
+                </div>
+
+                <div class="document-photo">
+                    <img id="outPhoto" alt="Student photograph">
+                    <span>STUDENT PHOTO</span>
+                </div>
+            </div>
+
+            <div class="declaration">
+                <h3>DECLARATION</h3>
+                <p>
+                    I confirm that the information provided in this
+                    registration form is accurate to the best of
+                    my knowledge.
+                </p>
+            </div>
+
+            <div class="signatures">
+                <div>
+                    <div class="signature-line"></div>
+                    <span>Student Signature</span>
+                </div>
+                <div>
+                    <div class="signature-line"></div>
+                    <span>Authorized Signature</span>
+                </div>
+            </div>
+
+            <footer class="document-footer">
+                VIIIUFC · OFFICIAL REGISTRATION DOCUMENT
+            </footer>
+
+        </article>
+    </section>
+
+</main>
+
+<footer class="site-footer">
+    <p>© 2026 VIIIUFC. All Rights Reserved.</p>
+    <p>Online Registration Portal</p>
+</footer>
+
+<script src="script.js"></script>
+<script src="send.js"></script>
+</body>
+</html>

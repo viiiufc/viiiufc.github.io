@@ -1,0 +1,474 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f5fa;
+    color: #17243a;
+    min-height: 100vh;
+}
+
+.topbar {
+    background: #101e38;
+    color: white;
+    padding: 18px 7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand img {
+    width: 55px;
+    height: 55px;
+    object-fit: contain;
+    background: white;
+    border-radius: 10px;
+    padding: 4px;
+}
+
+.brand h1 {
+    font-size: 24px;
+    letter-spacing: 2px;
+}
+
+.brand p {
+    color: #bac8df;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+.status {
+    background: #174e42;
+    color: #a9f3d2;
+    padding: 9px 15px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.container {
+    max-width: 760px;
+    margin: 45px auto;
+    padding: 0 18px;
+}
+
+.panel {
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px #17243a12;
+}
+
+.heading {
+    margin-bottom: 28px;
+}
+
+.eyebrow {
+    font-size: 11px;
+    color: #2764c5;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.heading h2 {
+    font-size: 30px;
+    margin: 10px 0;
+}
+
+.heading p {
+    color: #778399;
+    font-size: 14px;
+}
+
+.field {
+    margin-bottom: 22px;
+}
+
+.field label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+
+.field input,
+.field select {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #dce2eb;
+    border-radius: 9px;
+    outline: none;
+    font-size: 14px;
+    background: #fff;
+}
+
+.field input:focus,
+.field select:focus {
+    border-color: #2868cc;
+    box-shadow: 0 0 0 3px #2868cc15;
+}
+
+.upload-box {
+    border: 2px dashed #b8c8df;
+    border-radius: 12px;
+    padding: 22px;
+    text-align: center;
+    background: #f8faff;
+}
+
+.upload-box input {
+    border: none;
+    background: transparent;
+    max-width: 100%;
+}
+
+.upload-box p {
+    margin-top: 12px;
+    font-weight: bold;
+}
+
+.upload-box small {
+    color: #778399;
+    display: block;
+    margin-top: 5px;
+}
+
+#photoPreview {
+    display: none;
+    width: 110px;
+    height: 125px;
+    object-fit: cover;
+    margin: 15px auto 0;
+    border-radius: 8px;
+}
+
+button {
+    border: none;
+    cursor: pointer;
+    border-radius: 9px;
+    padding: 14px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    filter: brightness(1.08);
+}
+
+.primary-btn {
+    background: #205cc0;
+    color: white;
+}
+
+#registrationForm > .primary-btn {
+    width: 100%;
+}
+
+.secondary-btn {
+    background: #13845d;
+    color: white;
+}
+
+.light-btn {
+    background: #e8edf5;
+    color: #263752;
+}
+
+.note {
+    text-align: center;
+    font-size: 12px;
+    color: #8490a2;
+    margin-top: 16px;
+}
+
+.result-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+/* A4 REGISTRATION DOCUMENT */
+
+.a4 {
+    width: 210mm;
+    min-height: 297mm;
+    background: white;
+    margin: auto;
+    padding: 17mm 16mm;
+    color: #18243a;
+    box-shadow: 0 5px 30px #00000015;
+    position: relative;
+}
+
+.document-header {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    text-align: center;
+    justify-content: center;
+}
+
+.document-header img {
+    width: 85px;
+    height: 85px;
+    object-fit: contain;
+}
+
+.document-header h1 {
+    font-size: 29px;
+    letter-spacing: 3px;
+}
+
+.document-header h2 {
+    font-size: 17px;
+    margin-top: 8px;
+}
+
+.document-header p {
+    color: #69758a;
+    font-size: 10px;
+    margin-top: 6px;
+    letter-spacing: 1px;
+}
+
+.document-line {
+    height: 3px;
+    background: #1d4e91;
+    margin: 24px 0;
+}
+
+.registration-number {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #eff5ff;
+    padding: 18px;
+    border-left: 4px solid #205cc0;
+    border-radius: 5px;
+}
+
+.registration-number span {
+    font-size: 10px;
+    font-weight: bold;
+    color: #61718a;
+}
+
+.registration-number h2 {
+    font-size: 19px;
+    color: #205cc0;
+    margin-top: 7px;
+}
+
+.registration-number .verified {
+    background: #d7f5e8;
+    color: #16764d;
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+.section-title {
+    margin: 32px 0 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #dce5f2;
+    font-size: 15px;
+    letter-spacing: 1px;
+}
+
+.student-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.details {
+    flex: 1;
+}
+
+.detail {
+    border-bottom: 1px solid #e3e8ef;
+    padding: 16px 8px;
+}
+
+.detail span {
+    display: block;
+    font-size: 11px;
+    color: #718097;
+    margin-bottom: 7px;
+}
+
+.detail strong {
+    font-size: 15px;
+    overflow-wrap: anywhere;
+}
+
+.document-photo {
+    width: 120px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.document-photo img {
+    width: 120px;
+    height: 145px;
+    object-fit: cover;
+    border: 2px solid #dce3ed;
+    border-radius: 5px;
+}
+
+.document-photo span {
+    display: block;
+    font-size: 9px;
+    color: #778399;
+    margin-top: 7px;
+}
+
+.declaration {
+    margin-top: 38px;
+    padding: 18px;
+    border: 1px solid #dce5f2;
+    border-radius: 6px;
+}
+
+.declaration h3 {
+    font-size: 12px;
+    margin-bottom: 12px;
+}
+
+.declaration p {
+    font-size: 12px;
+    line-height: 1.8;
+    color: #59677d;
+}
+
+.signatures {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 85px;
+    text-align: center;
+}
+
+.signatures > div {
+    width: 180px;
+}
+
+.signature-line {
+    border-top: 1px solid #29384e;
+    margin-bottom: 10px;
+}
+
+.signatures span {
+    font-size: 11px;
+}
+
+.document-footer {
+    position: absolute;
+    bottom: 13mm;
+    left: 16mm;
+    right: 16mm;
+    text-align: center;
+    border-top: 1px solid #dce5f2;
+    padding-top: 12px;
+    color: #778399;
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.site-footer {
+    text-align: center;
+    padding: 25px;
+    color: #8793a6;
+    font-size: 12px;
+    line-height: 2;
+}
+
+/* PRINT SETTINGS */
+
+@page {
+    size: A4 portrait;
+    margin: 0;
+}
+
+@media print {
+    body {
+        background: white;
+    }
+
+    .topbar,
+    .site-footer,
+    .result-actions,
+    #formSection {
+        display: none !important;
+    }
+
+    .container {
+        max-width: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    #resultSection {
+        display: block !important;
+    }
+
+    .a4 {
+        width: 210mm;
+        height: 297mm;
+        min-height: 297mm;
+        margin: 0;
+        box-shadow: none;
+        break-after: avoid;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .a4 {
+        width: 100%;
+        min-height: 900px;
+        padding: 25px;
+    }
+
+    .document-header {
+        flex-direction: column;
+    }
+
+    .student-layout {
+        gap: 10px;
+    }
+
+    .document-photo,
+    .document-photo img {
+        width: 95px;
+    }
+
+    .document-photo img {
+        height: 120px;
+    }
+
+    .signatures {
+        gap: 20px;
+    }
+
+    .signatures > div {
+        width: 45%;
+    }
+}
